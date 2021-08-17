@@ -17,7 +17,9 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ByteThisBehaviorSubject = void 0;
 var rxjs_1 = require("rxjs");
-var Operators_1 = require("rxjs/Operators");
+var switchMap_1 = require("rxjs/internal/operators/switchMap");
+var take_1 = require("rxjs/internal/operators/take");
+var filter_1 = require("rxjs/internal/operators/filter");
 var abstract_subject_1 = require("../abstract-subject");
 /**
  * ByteThis Subject instantiation which exibits RxJs Subject behaviors
@@ -49,9 +51,9 @@ var ByteThisBehaviorSubject = /** @class */ (function (_super) {
     };
     ByteThisBehaviorSubject.prototype.pipeRequired = function (obs) {
         var _this = this;
-        return obs.pipe(Operators_1.switchMap(function (value) {
+        return obs.pipe(switchMap_1.switchMap(function (value) {
             if (_this.initializer && typeof value === 'undefined') {
-                _this.initializer().pipe(Operators_1.take(1)).subscribe(function (initializerValue) {
+                _this.initializer().pipe(take_1.take(1)).subscribe(function (initializerValue) {
                     _this.next(initializerValue);
                 });
                 return rxjs_1.of(void 0);
@@ -59,7 +61,7 @@ var ByteThisBehaviorSubject = /** @class */ (function (_super) {
             else {
                 return rxjs_1.of(value);
             }
-        }), Operators_1.filter(function (value) { return typeof value !== 'undefined'; }));
+        }), filter_1.filter(function (value) { return typeof value !== 'undefined'; }));
     };
     return ByteThisBehaviorSubject;
 }(abstract_subject_1.ByteThisAbstractSubject));

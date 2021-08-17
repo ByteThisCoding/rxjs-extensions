@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ByteThisAbstractSubject = void 0;
-var Operators_1 = require("rxjs/Operators");
 var uuid_1 = require("uuid");
+var take_1 = require("rxjs/internal/operators/take");
 /**
  * This abstract class will provide the core functionality for subjects
  * The subclasses will provide Subject-specific behaviors
@@ -63,7 +63,7 @@ var ByteThisAbstractSubject = /** @class */ (function () {
      */
     ByteThisAbstractSubject.prototype.nextFromObservableFirstEmit = function (data) {
         var _this = this;
-        data.pipe(Operators_1.take(1)).subscribe(function (value) { return _this.next(value); });
+        data.pipe(take_1.take(1)).subscribe(function (value) { return _this.next(value); });
         return this.identity();
     };
     /**

@@ -1,7 +1,9 @@
 import { BehaviorSubject, Observable, of } from "rxjs";
-import { filter, switchMap, take } from "rxjs/Operators";
+import { switchMap } from "rxjs/internal/operators/switchMap";
+import { take } from "rxjs/internal/operators/take";
+import { filter } from "rxjs/internal/operators/filter";
 import { ByteThisAbstractSubject } from "../abstract-subject";
-import { iByteThisAbstractSubject, iByteThisBehaviorSubject } from "../models/byte-this-subject";
+import { iByteThisBehaviorSubject } from "../models/byte-this-subject";
 
 /**
  * ByteThis Subject instantiation which exibits RxJs Subject behaviors
