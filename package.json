@@ -1,6 +1,6 @@
 {
     "name": "@byte-this/rxjs-extensions",
-    "version": "1.0.7",
+    "version": "1.0.10",
     "description": "Additional implementations to facilitate using rxjs in certain use cases.",
     "main": "public-api.js",
     "types": "public-api.d.ts",
