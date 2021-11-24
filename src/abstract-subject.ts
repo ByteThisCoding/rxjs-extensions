@@ -1,7 +1,7 @@
 import { Observable, Subscription } from "rxjs";
 import { iByteThisAbstractSubject, iPartialSubject } from "./models/byte-this-subject";
 import { v4 as uuidV4 } from "uuid";
-import { take } from "rxjs/internal/operators/take";
+import { take } from "rxjs/operators";
 
 /**
  * This abstract class will provide the core functionality for subjects

@@ -1,5 +1,5 @@
 import { v4 as uuidV4 } from "uuid";
-import { take } from "rxjs/internal/operators/take";
+import { take } from "rxjs/operators";
 /**
  * This abstract class will provide the core functionality for subjects
  * The subclasses will provide Subject-specific behaviors
